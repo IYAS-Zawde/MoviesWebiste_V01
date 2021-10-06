@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="container">
+    <div class="container" id="movieDetials">
+        <h2 id="movieName"> Movie Name </h2>
+        <div class="col-sm-3 d-flex justify-content-center" id="moviePicture">
+            <img src="@Url.Content("~/images/movieIcon.png")" alt="Movie icon" class="img-fluid img-thumbnail">
+            <button class="d-block btn btn-info">Download</button>
+        </div>
+        <div class="col-sm-9" id="movieInfo">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Name</th>
+                        <td>movie name</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Director</th>
+                        <td>Jacob</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Actors</th>
+                        <td>Larry and another Actors</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Gender</th>
+                        <td>Action Or Drama</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Rating</th>
+                        <td>5.6 / 8</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Price</th>
+                        <td>15 $</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container" id="RateComment">
+        <div class="container" id="userRateComment">
+            add your Rating and Comment
+        </div>
+        <div class="container" id="otherComments">
+            <!-- for each -->
+            <div class="card border border-dark rounded" >
+                <div class="card-body">
+                    <h5 class="card-title"><b>Commenter Name</b></h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>

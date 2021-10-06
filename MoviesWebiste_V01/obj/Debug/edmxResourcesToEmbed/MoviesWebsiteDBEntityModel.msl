@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MoviesWebsiteDBModelStoreContainer" CdmEntityContainer="MoviesWebsiteDBEntities">
+    <EntitySetMapping Name="actors">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.actor">
+        <MappingFragment StoreEntitySet="actor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="category1" ColumnName="category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="channels">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.channel">
+        <MappingFragment StoreEntitySet="channel">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="creterias">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.creteria">
+        <MappingFragment StoreEntitySet="creteria">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="criteria" ColumnName="criteria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="education_level_id" ColumnName="education_level_id" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="home_owner_id" ColumnName="home_owner_id" />
+          <ScalarProperty Name="internet_connection_id" ColumnName="internet_connection_id" />
+          <ScalarProperty Name="marital_status_id" ColumnName="marital_status_id" />
+          <ScalarProperty Name="num_bathrooms" ColumnName="num_bathrooms" />
+          <ScalarProperty Name="movie_selector_id" ColumnName="movie_selector_id" />
+          <ScalarProperty Name="num_bedrooms" ColumnName="num_bedrooms" />
+          <ScalarProperty Name="num_cars" ColumnName="num_cars" />
+          <ScalarProperty Name="num_childerns" ColumnName="num_childerns" />
+          <ScalarProperty Name="num_tvs" ColumnName="num_tvs" />
+          <ScalarProperty Name="pptv_frequent_id" ColumnName="pptv_frequent_id" />
+          <ScalarProperty Name="baying_frequent_id" ColumnName="baying_frequent_id" />
+          <ScalarProperty Name="reating_frequent_id" ColumnName="reating_frequent_id" />
+          <ScalarProperty Name="viewing_frequent_id" ColumnName="viewing_frequent_id" />
+          <ScalarProperty Name="theater_frequent_id" ColumnName="theater_frequent_id" />
+          <ScalarProperty Name="tv_movie_frequent_id" ColumnName="tv_movie_frequent_id" />
+          <ScalarProperty Name="tv_signal_id" ColumnName="tv_signal_id" />
+          <ScalarProperty Name="format_id" ColumnName="format_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="directors">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.director">
+        <MappingFragment StoreEntitySet="director">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="education_level">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.education_level">
+        <MappingFragment StoreEntitySet="education_level">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="education_level1" ColumnName="education_level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="formats">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.format">
+        <MappingFragment StoreEntitySet="format">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="format1" ColumnName="format" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="frequentlies">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.frequently">
+        <MappingFragment StoreEntitySet="frequently">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="frequently1" ColumnName="frequently" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="home_owner">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.home_owner">
+        <MappingFragment StoreEntitySet="home_owner">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="home_owner_type" ColumnName="home_owner_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hoppies">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.hoppy">
+        <MappingFragment StoreEntitySet="hoppy">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="hobby" ColumnName="hobby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="internet_connection">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.internet_connection">
+        <MappingFragment StoreEntitySet="internet_connection">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="internet_connection_type" ColumnName="internet_connection_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="marital_status">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.marital_status">
+        <MappingFragment StoreEntitySet="marital_status">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="marital_status1" ColumnName="marital_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="movies">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.movie">
+        <MappingFragment StoreEntitySet="movie">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="director_id" ColumnName="director_id" />
+          <ScalarProperty Name="overview" ColumnName="overview" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="download_url" ColumnName="download_url" />
+          <ScalarProperty Name="img" ColumnName="img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="movie_selector">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.movie_selector">
+        <MappingFragment StoreEntitySet="movie_selector">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="movie_selector1" ColumnName="movie_selector" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.order">
+        <MappingFragment StoreEntitySet="order">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ratings">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.rating">
+        <MappingFragment StoreEntitySet="rating">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="movie_id" ColumnName="movie_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="technologies">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.technology">
+        <MappingFragment StoreEntitySet="technology">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tv_signal">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.tv_signal">
+        <MappingFragment StoreEntitySet="tv_signal">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="tv_signal1" ColumnName="tv_signal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order_movie">
+      <EntityTypeMapping TypeName="MoviesWebsiteDBModel.order_movie">
+        <MappingFragment StoreEntitySet="order_movie">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="movie_id" ColumnName="movie_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="customer_actor" TypeName="MoviesWebsiteDBModel.customer_actor" StoreEntitySet="customer_actor">
+      <EndProperty Name="actor">
+        <ScalarProperty Name="ID" ColumnName="actor_id" />
+      </EndProperty>
+      <EndProperty Name="customer">
+        <ScalarProperty Name="ID" ColumnName="customer_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="customer_channel" TypeName="MoviesWebsiteDBModel.customer_channel" StoreEntitySet="customer_channel">
+      <EndProperty Name="channel">
+        <ScalarProperty Name="ID" ColumnName="channel_id" />
+      </EndProperty>
+      <EndProperty Name="customer">
+        <ScalarProperty Name="ID" ColumnName="customer_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="customer_creteria" TypeName="MoviesWebsiteDBModel.customer_creteria" StoreEntitySet="customer_creteria">
+      <EndProperty Name="creteria">
+        <ScalarProperty Name="ID" ColumnName="creteria_id" />
+      </EndProperty>
+      <EndProperty Name="customer">
+        <ScalarProperty Name="ID" ColumnName="customer_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="customer_director" TypeName="MoviesWebsiteDBModel.customer_director" StoreEntitySet="customer_director">
+      <EndProperty Name="customer">
+        <ScalarProperty Name="ID" ColumnName="customer_id" />
+      </EndProperty>
+      <EndProperty Name="director">
+        <ScalarProperty Name="ID" ColumnName="director_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="customer_movie" TypeName="MoviesWebsiteDBModel.customer_movie" StoreEntitySet="customer_movie">
+      <EndProperty Name="customer">
+        <ScalarProperty Name="ID" ColumnName="customer_id" />
+      </EndProperty>
+      <EndProperty Name="movie">
+        <ScalarProperty Name="ID" ColumnName="movie_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="customer_technology" TypeName="MoviesWebsiteDBModel.customer_technology" StoreEntitySet="customer_technology">
+      <EndProperty Name="customer">
+        <ScalarProperty Name="ID" ColumnName="customer_id" />
+      </EndProperty>
+      <EndProperty Name="technology">
+        <ScalarProperty Name="ID" ColumnName="technology_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="cutomer_hoppy" TypeName="MoviesWebsiteDBModel.cutomer_hoppy" StoreEntitySet="cutomer_hoppy">
+      <EndProperty Name="customer">
+        <ScalarProperty Name="ID" ColumnName="customer_id" />
+      </EndProperty>
+      <EndProperty Name="hoppy">
+        <ScalarProperty Name="ID" ColumnName="hoppy_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="movie_actor" TypeName="MoviesWebsiteDBModel.movie_actor" StoreEntitySet="movie_actor">
+      <EndProperty Name="actor">
+        <ScalarProperty Name="ID" ColumnName="actor_id" />
+      </EndProperty>
+      <EndProperty Name="movie">
+        <ScalarProperty Name="ID" ColumnName="movie_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="movie_category" TypeName="MoviesWebsiteDBModel.movie_category" StoreEntitySet="movie_category">
+      <EndProperty Name="category">
+        <ScalarProperty Name="ID" ColumnName="category_id" />
+      </EndProperty>
+      <EndProperty Name="movie">
+        <ScalarProperty Name="ID" ColumnName="movie_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

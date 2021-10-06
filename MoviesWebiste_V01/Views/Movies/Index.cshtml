@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MoviesWebiste_V01.movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<div class="container">
+    <form action="~/Movies/Search" method="get">
+       <div class="form-group">
+           <table class="table">
+               <tr>
+                   <td>
+                       <label>Movie Name</label>
+                       <input class="form-control" name="movie_name" type="text" placeholder="Enter Movie Name">
+                   </td>
+                   <td>
+                       <label>Director Name</label>
+                       <input class="form-control" name="director_name" type="text" placeholder="Enter Director Name">
+                   </td>
+                   <td>
+                       <label>Actor Name</label>
+                       <input class="form-control" name="actor_name" type="text" placeholder="Enter Actor Name">
+                   </td>
+                   <td>
+                       <label>Movie Genre</label>
+                       <select class="form-control" name="movie_genre">
+                           @foreach (var item in ViewBag.Genres)
+                           {
+                               <option value="@item.ID">@item.category1</option>
+                           }
+                       </select>
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       <button type="submit" class="btn btn-primary">Search</button>
+                   </td>
+               </tr>
+           </table>
+       </div>
+         
+    </form>
+        
+</div>
+
+<div class="container" id="lettersContainer">
+    @for (char i = 'A'; i <= 'Z'; i++)
+    {
+
+        <a class="btn btn-primary" href=@Url.Action("StartWith","Movies",new { letter = i}) role="button">@i</a>
+    }
+</div>
+
+
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+        @Html.Partial("_Movie", item);
+    }
+</div>

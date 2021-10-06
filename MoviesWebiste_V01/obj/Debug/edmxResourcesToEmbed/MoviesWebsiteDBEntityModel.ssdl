@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MoviesWebsiteDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="actor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="category" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="channel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="creteria">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="criteria" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="age" Type="int" />
+    <Property Name="email" Type="varchar(max)" />
+    <Property Name="education_level_id" Type="int" />
+    <Property Name="gender" Type="int" />
+    <Property Name="home_owner_id" Type="int" />
+    <Property Name="internet_connection_id" Type="int" />
+    <Property Name="marital_status_id" Type="int" />
+    <Property Name="num_bathrooms" Type="float" />
+    <Property Name="movie_selector_id" Type="int" />
+    <Property Name="num_bedrooms" Type="int" />
+    <Property Name="num_cars" Type="int" />
+    <Property Name="num_childerns" Type="int" />
+    <Property Name="num_tvs" Type="int" />
+    <Property Name="pptv_frequent_id" Type="int" />
+    <Property Name="baying_frequent_id" Type="int" />
+    <Property Name="reating_frequent_id" Type="int" />
+    <Property Name="viewing_frequent_id" Type="int" />
+    <Property Name="theater_frequent_id" Type="int" />
+    <Property Name="tv_movie_frequent_id" Type="int" />
+    <Property Name="tv_signal_id" Type="int" />
+    <Property Name="format_id" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MoviesWebsiteDB.dbo.customer_actor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="customer_actor">
+    <Key>
+      <PropertyRef Name="customer_id" />
+      <PropertyRef Name="actor_id" />
+    </Key>
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="actor_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MoviesWebsiteDB.dbo.customer_channel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="customer_channel">
+    <Key>
+      <PropertyRef Name="customer_id" />
+      <PropertyRef Name="channel_id" />
+    </Key>
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MoviesWebsiteDB.dbo.customer_creteria' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="customer_creteria">
+    <Key>
+      <PropertyRef Name="customer_id" />
+      <PropertyRef Name="creteria_id" />
+    </Key>
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="creteria_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MoviesWebsiteDB.dbo.customer_director' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="customer_director">
+    <Key>
+      <PropertyRef Name="customer_id" />
+      <PropertyRef Name="director_id" />
+    </Key>
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="director_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MoviesWebsiteDB.dbo.customer_movie' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="customer_movie">
+    <Key>
+      <PropertyRef Name="customer_id" />
+      <PropertyRef Name="movie_id" />
+    </Key>
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="movie_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MoviesWebsiteDB.dbo.customer_technology' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="customer_technology">
+    <Key>
+      <PropertyRef Name="customer_id" />
+      <PropertyRef Name="technology_id" />
+    </Key>
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="technology_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MoviesWebsiteDB.dbo.cutomer_hoppy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="cutomer_hoppy">
+    <Key>
+      <PropertyRef Name="customer_id" />
+      <PropertyRef Name="hoppy_id" />
+    </Key>
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="hoppy_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="director">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="education_level">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="education_level" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="format">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="format" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="frequently">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="frequently" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="home_owner">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="home_owner_type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="hoppy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="hobby" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="internet_connection">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="internet_connection_type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="marital_status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="marital_status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="movie">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="director_id" Type="int" />
+    <Property Name="overview" Type="text" />
+    <Property Name="price" Type="float" />
+    <Property Name="download_url" Type="text" />
+    <Property Name="img" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MoviesWebsiteDB.dbo.movie_actor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="movie_actor">
+    <Key>
+      <PropertyRef Name="movie_id" />
+      <PropertyRef Name="actor_id" />
+    </Key>
+    <Property Name="movie_id" Type="int" Nullable="false" />
+    <Property Name="actor_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MoviesWebsiteDB.dbo.movie_category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="movie_category">
+    <Key>
+      <PropertyRef Name="movie_id" />
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="movie_id" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="movie_selector">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="movie_selector" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="customer_id" Type="int" />
+    <Property Name="total" Type="float" />
+    <Property Name="date" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MoviesWebsiteDB.dbo.order_movie' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="order_movie">
+    <Key>
+      <PropertyRef Name="order_id" />
+      <PropertyRef Name="movie_id" />
+    </Key>
+    <Property Name="order_id" Type="int" Nullable="false" />
+    <Property Name="movie_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rating">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="movie_id" Type="int" Nullable="false" />
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="rate" Type="int" />
+    <Property Name="comment" Type="text" />
+  </EntityType>
+  <EntityType Name="technology">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tv_signal">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="tv_signal" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_customer_channel_channel">
+    <End Role="channel" Type="Self.channel" Multiplicity="1" />
+    <End Role="customer_channel" Type="Self.customer_channel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="channel">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer_channel">
+        <PropertyRef Name="channel_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_channel_customer">
+    <End Role="customer" Type="Self.customer" Multiplicity="1" />
+    <End Role="customer_channel" Type="Self.customer_channel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer_channel">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_creteria_creteria">
+    <End Role="creteria" Type="Self.creteria" Multiplicity="1" />
+    <End Role="customer_creteria" Type="Self.customer_creteria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="creteria">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer_creteria">
+        <PropertyRef Name="creteria_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_creteria_customer">
+    <End Role="customer" Type="Self.customer" Multiplicity="1" />
+    <End Role="customer_creteria" Type="Self.customer_creteria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer_creteria">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_director_customer">
+    <End Role="customer" Type="Self.customer" Multiplicity="1" />
+    <End Role="customer_director" Type="Self.customer_director" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer_director">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_director_director">
+    <End Role="director" Type="Self.director" Multiplicity="1" />
+    <End Role="customer_director" Type="Self.customer_director" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="director">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer_director">
+        <PropertyRef Name="director_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_education_level">
+    <End Role="education_level" Type="Self.education_level" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="education_level">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="education_level_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_format">
+    <End Role="format" Type="Self.format" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="format">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="format_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_frequently">
+    <End Role="frequently" Type="Self.frequently" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="frequently">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="baying_frequent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_frequently1">
+    <End Role="frequently" Type="Self.frequently" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="frequently">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="pptv_frequent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_frequently2">
+    <End Role="frequently" Type="Self.frequently" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="frequently">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="reating_frequent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_frequently3">
+    <End Role="frequently" Type="Self.frequently" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="frequently">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="theater_frequent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_frequently4">
+    <End Role="frequently" Type="Self.frequently" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="frequently">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="tv_movie_frequent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_frequently5">
+    <End Role="frequently" Type="Self.frequently" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="frequently">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="viewing_frequent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_home_owner">
+    <End Role="home_owner" Type="Self.home_owner" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="home_owner">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="home_owner_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_internet_connection">
+    <End Role="internet_connection" Type="Self.internet_connection" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="internet_connection">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="internet_connection_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_marital_status">
+    <End Role="marital_status" Type="Self.marital_status" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="marital_status">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="marital_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_movie_customer">
+    <End Role="customer" Type="Self.customer" Multiplicity="1" />
+    <End Role="customer_movie" Type="Self.customer_movie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer_movie">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_movie_movie">
+    <End Role="movie" Type="Self.movie" Multiplicity="1" />
+    <End Role="customer_movie" Type="Self.customer_movie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="movie">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer_movie">
+        <PropertyRef Name="movie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_movie_selector">
+    <End Role="movie_selector" Type="Self.movie_selector" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="movie_selector">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="movie_selector_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_technology_customer">
+    <End Role="customer" Type="Self.customer" Multiplicity="1" />
+    <End Role="customer_technology" Type="Self.customer_technology" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer_technology">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_technology_technology">
+    <End Role="technology" Type="Self.technology" Multiplicity="1" />
+    <End Role="customer_technology" Type="Self.customer_technology" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="technology">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer_technology">
+        <PropertyRef Name="technology_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_tv_signal">
+    <End Role="tv_signal" Type="Self.tv_signal" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tv_signal">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer">
+        <PropertyRef Name="tv_signal_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cutomer_actor_actor">
+    <End Role="actor" Type="Self.actor" Multiplicity="1" />
+    <End Role="customer_actor" Type="Self.customer_actor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="actor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer_actor">
+        <PropertyRef Name="actor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cutomer_actor_customer">
+    <End Role="customer" Type="Self.customer" Multiplicity="1" />
+    <End Role="customer_actor" Type="Self.customer_actor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="customer_actor">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cutomer_hoppy_customer">
+    <End Role="customer" Type="Self.customer" Multiplicity="1" />
+    <End Role="cutomer_hoppy" Type="Self.cutomer_hoppy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="cutomer_hoppy">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cutomer_hoppy_hoppy">
+    <End Role="hoppy" Type="Self.hoppy" Multiplicity="1" />
+    <End Role="cutomer_hoppy" Type="Self.cutomer_hoppy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hoppy">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="cutomer_hoppy">
+        <PropertyRef Name="hoppy_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_movie_actor_actor">
+    <End Role="actor" Type="Self.actor" Multiplicity="1" />
+    <End Role="movie_actor" Type="Self.movie_actor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="actor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="movie_actor">
+        <PropertyRef Name="actor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_movie_actor_movie">
+    <End Role="movie" Type="Self.movie" Multiplicity="1" />
+    <End Role="movie_actor" Type="Self.movie_actor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="movie">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="movie_actor">
+        <PropertyRef Name="movie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_movie_category_category">
+    <End Role="category" Type="Self.category" Multiplicity="1" />
+    <End Role="movie_category" Type="Self.movie_category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="movie_category">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_movie_category_movie">
+    <End Role="movie" Type="Self.movie" Multiplicity="1" />
+    <End Role="movie_category" Type="Self.movie_category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="movie">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="movie_category">
+        <PropertyRef Name="movie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_movie_director">
+    <End Role="director" Type="Self.director" Multiplicity="0..1" />
+    <End Role="movie" Type="Self.movie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="director">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="movie">
+        <PropertyRef Name="director_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order_customer">
+    <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+    <End Role="order" Type="Self.order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order_movie_movie">
+    <End Role="movie" Type="Self.movie" Multiplicity="1" />
+    <End Role="order_movie" Type="Self.order_movie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="movie">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="order_movie">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order_movie_order">
+    <End Role="order" Type="Self.order" Multiplicity="1" />
+    <End Role="order_movie" Type="Self.order_movie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="order_movie">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_rating_customer">
+    <End Role="customer" Type="Self.customer" Multiplicity="1" />
+    <End Role="rating" Type="Self.rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="rating">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_rating_movie">
+    <End Role="movie" Type="Self.movie" Multiplicity="1" />
+    <End Role="rating" Type="Self.rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="movie">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="rating">
+        <PropertyRef Name="movie_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MoviesWebsiteDBModelStoreContainer">
+    <EntitySet Name="actor" EntityType="Self.actor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="channel" EntityType="Self.channel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="creteria" EntityType="Self.creteria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="director" EntityType="Self.director" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="education_level" EntityType="Self.education_level" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="format" EntityType="Self.format" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="frequently" EntityType="Self.frequently" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="home_owner" EntityType="Self.home_owner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hoppy" EntityType="Self.hoppy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="internet_connection" EntityType="Self.internet_connection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="marital_status" EntityType="Self.marital_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="movie" EntityType="Self.movie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="movie_selector" EntityType="Self.movie_selector" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rating" EntityType="Self.rating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="technology" EntityType="Self.technology" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tv_signal" EntityType="Self.tv_signal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customer_actor" EntityType="Self.customer_actor" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [customer_actor].[customer_id] AS [customer_id], 
+    [customer_actor].[actor_id] AS [actor_id]
+    FROM [dbo].[customer_actor] AS [customer_actor]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="customer_channel" EntityType="Self.customer_channel" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [customer_channel].[customer_id] AS [customer_id], 
+    [customer_channel].[channel_id] AS [channel_id]
+    FROM [dbo].[customer_channel] AS [customer_channel]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="customer_creteria" EntityType="Self.customer_creteria" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [customer_creteria].[customer_id] AS [customer_id], 
+    [customer_creteria].[creteria_id] AS [creteria_id]
+    FROM [dbo].[customer_creteria] AS [customer_creteria]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="customer_director" EntityType="Self.customer_director" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [customer_director].[customer_id] AS [customer_id], 
+    [customer_director].[director_id] AS [director_id]
+    FROM [dbo].[customer_director] AS [customer_director]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="customer_movie" EntityType="Self.customer_movie" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [customer_movie].[customer_id] AS [customer_id], 
+    [customer_movie].[movie_id] AS [movie_id]
+    FROM [dbo].[customer_movie] AS [customer_movie]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="customer_technology" EntityType="Self.customer_technology" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [customer_technology].[customer_id] AS [customer_id], 
+    [customer_technology].[technology_id] AS [technology_id]
+    FROM [dbo].[customer_technology] AS [customer_technology]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="cutomer_hoppy" EntityType="Self.cutomer_hoppy" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [cutomer_hoppy].[customer_id] AS [customer_id], 
+    [cutomer_hoppy].[hoppy_id] AS [hoppy_id]
+    FROM [dbo].[cutomer_hoppy] AS [cutomer_hoppy]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="movie_actor" EntityType="Self.movie_actor" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [movie_actor].[movie_id] AS [movie_id], 
+    [movie_actor].[actor_id] AS [actor_id]
+    FROM [dbo].[movie_actor] AS [movie_actor]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="movie_category" EntityType="Self.movie_category" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [movie_category].[movie_id] AS [movie_id], 
+    [movie_category].[category_id] AS [category_id]
+    FROM [dbo].[movie_category] AS [movie_category]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="order_movie" EntityType="Self.order_movie" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [order_movie].[order_id] AS [order_id], 
+    [order_movie].[movie_id] AS [movie_id]
+    FROM [dbo].[order_movie] AS [order_movie]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_customer_channel_channel" Association="Self.FK_customer_channel_channel">
+      <End Role="channel" EntitySet="channel" />
+      <End Role="customer_channel" EntitySet="customer_channel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_channel_customer" Association="Self.FK_customer_channel_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="customer_channel" EntitySet="customer_channel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_creteria_creteria" Association="Self.FK_customer_creteria_creteria">
+      <End Role="creteria" EntitySet="creteria" />
+      <End Role="customer_creteria" EntitySet="customer_creteria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_creteria_customer" Association="Self.FK_customer_creteria_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="customer_creteria" EntitySet="customer_creteria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_director_customer" Association="Self.FK_customer_director_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="customer_director" EntitySet="customer_director" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_director_director" Association="Self.FK_customer_director_director">
+      <End Role="director" EntitySet="director" />
+      <End Role="customer_director" EntitySet="customer_director" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_education_level" Association="Self.FK_customer_education_level">
+      <End Role="education_level" EntitySet="education_level" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_format" Association="Self.FK_customer_format">
+      <End Role="format" EntitySet="format" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_frequently" Association="Self.FK_customer_frequently">
+      <End Role="frequently" EntitySet="frequently" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_frequently1" Association="Self.FK_customer_frequently1">
+      <End Role="frequently" EntitySet="frequently" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_frequently2" Association="Self.FK_customer_frequently2">
+      <End Role="frequently" EntitySet="frequently" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_frequently3" Association="Self.FK_customer_frequently3">
+      <End Role="frequently" EntitySet="frequently" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_frequently4" Association="Self.FK_customer_frequently4">
+      <End Role="frequently" EntitySet="frequently" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_frequently5" Association="Self.FK_customer_frequently5">
+      <End Role="frequently" EntitySet="frequently" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_home_owner" Association="Self.FK_customer_home_owner">
+      <End Role="home_owner" EntitySet="home_owner" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_internet_connection" Association="Self.FK_customer_internet_connection">
+      <End Role="internet_connection" EntitySet="internet_connection" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_marital_status" Association="Self.FK_customer_marital_status">
+      <End Role="marital_status" EntitySet="marital_status" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_movie_customer" Association="Self.FK_customer_movie_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="customer_movie" EntitySet="customer_movie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_movie_movie" Association="Self.FK_customer_movie_movie">
+      <End Role="movie" EntitySet="movie" />
+      <End Role="customer_movie" EntitySet="customer_movie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_movie_selector" Association="Self.FK_customer_movie_selector">
+      <End Role="movie_selector" EntitySet="movie_selector" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_technology_customer" Association="Self.FK_customer_technology_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="customer_technology" EntitySet="customer_technology" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_technology_technology" Association="Self.FK_customer_technology_technology">
+      <End Role="technology" EntitySet="technology" />
+      <End Role="customer_technology" EntitySet="customer_technology" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_tv_signal" Association="Self.FK_customer_tv_signal">
+      <End Role="tv_signal" EntitySet="tv_signal" />
+      <End Role="customer" EntitySet="customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cutomer_actor_actor" Association="Self.FK_cutomer_actor_actor">
+      <End Role="actor" EntitySet="actor" />
+      <End Role="customer_actor" EntitySet="customer_actor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cutomer_actor_customer" Association="Self.FK_cutomer_actor_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="customer_actor" EntitySet="customer_actor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cutomer_hoppy_customer" Association="Self.FK_cutomer_hoppy_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="cutomer_hoppy" EntitySet="cutomer_hoppy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cutomer_hoppy_hoppy" Association="Self.FK_cutomer_hoppy_hoppy">
+      <End Role="hoppy" EntitySet="hoppy" />
+      <End Role="cutomer_hoppy" EntitySet="cutomer_hoppy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_movie_actor_actor" Association="Self.FK_movie_actor_actor">
+      <End Role="actor" EntitySet="actor" />
+      <End Role="movie_actor" EntitySet="movie_actor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_movie_actor_movie" Association="Self.FK_movie_actor_movie">
+      <End Role="movie" EntitySet="movie" />
+      <End Role="movie_actor" EntitySet="movie_actor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_movie_category_category" Association="Self.FK_movie_category_category">
+      <End Role="category" EntitySet="category" />
+      <End Role="movie_category" EntitySet="movie_category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_movie_category_movie" Association="Self.FK_movie_category_movie">
+      <End Role="movie" EntitySet="movie" />
+      <End Role="movie_category" EntitySet="movie_category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_movie_director" Association="Self.FK_movie_director">
+      <End Role="director" EntitySet="director" />
+      <End Role="movie" EntitySet="movie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order_customer" Association="Self.FK_order_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="order" EntitySet="order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order_movie_movie" Association="Self.FK_order_movie_movie">
+      <End Role="movie" EntitySet="movie" />
+      <End Role="order_movie" EntitySet="order_movie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order_movie_order" Association="Self.FK_order_movie_order">
+      <End Role="order" EntitySet="order" />
+      <End Role="order_movie" EntitySet="order_movie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_rating_customer" Association="Self.FK_rating_customer">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="rating" EntitySet="rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_rating_movie" Association="Self.FK_rating_movie">
+      <End Role="movie" EntitySet="movie" />
+      <End Role="rating" EntitySet="rating" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

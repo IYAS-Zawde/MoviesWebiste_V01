@@ -1,0 +1,21 @@
+﻿@model MoviesWebiste_V01.movie
+
+<div class="movie-card">
+    <div class="movie-header">
+        <div class="header-icon-container">
+            <a href=@Url.Action("Details", "Movies",new { id = Model.ID })>
+                <img src="@Url.Content("~/images/movieIcon.png")" alt="Movie icon" class="img-fluid img-thumbnail">
+            </a>
+        </div>
+    </div><!--movie-header-->
+    <div class="movie-content">
+        <div class="movie-content-header">
+            <a href=@Url.Action("Details", "Movies",new { id = Model.ID })>
+                <h3 class="movie-title">@Model.name</h3>
+            </a>
+        </div>
+        <div class="movie-info">
+            @Model.name
+        </div>
+    </div><!--movie-content-->
+</div><!--movie-card-->
