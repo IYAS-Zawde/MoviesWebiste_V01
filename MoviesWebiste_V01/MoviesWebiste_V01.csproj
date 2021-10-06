@@ -218,7 +218,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\SearchModel.cs" />
     <Compile Include="movie.cs">
       <DependentUpon>MoviesWebsiteDBEntityModel.tt</DependentUpon>
     </Compile>
@@ -257,6 +256,7 @@
     <Compile Include="tv_signal.cs">
       <DependentUpon>MoviesWebsiteDBEntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CommentDetials.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\movieIcon.png" />
@@ -334,7 +334,6 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Shared\_Movie.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
-    <Content Include="Views\Movies\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

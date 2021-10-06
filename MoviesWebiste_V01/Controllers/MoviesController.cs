@@ -58,9 +58,44 @@ namespace MoviesWebiste_V01.Controllers
         public ActionResult Details(int id)
         {
             MoviesWebiste_V01.movie movie;
-            var dbContext = new MoviesWebsiteDBEntities();
-            movie = dbContext.movies.Where(x => x.ID == id).First();
-            return View();
+            string directorName;
+            string cast; // List Of Actors
+            string categories; // List of Categories that Movie Belong
+            double rating_avg;
+            List<MoviesWebiste_V01.Models.CommentDetials> Ratings_Comments = new List<Models.CommentDetials>();
+            using (var dbContext = new MoviesWebsiteDBEntities()) {
+                movie = dbContext.movies.Where(x => x.ID == id).First();
+                directorName = dbContext.directors.Where(x => x.ID == movie.director_id).Select(z=> z.name).FirstOrDefault();
+                cast = String.Join(",", movie.actors.Select(x => x.name).ToList());
+                categories = String.Join(",", movie.categories.Select(z => z.category1).ToList());
+                if (movie.ratings.Count() == 0)
+                {
+                    rating_avg = 0;
+
+                }
+                else
+                {
+                    rating_avg = (double)movie.ratings.Select(z => z.rate).ToList().Average();
+                    foreach (var item in movie.ratings)
+                    {
+                        Ratings_Comments.Add(
+                            new Models.CommentDetials
+                            {
+                                customerName = dbContext.customers.Where(cus => cus.ID == item.customer_id).Select(cusName => cusName.name).FirstOrDefault(),
+                                comment = item.comment,
+                                rate = (int)item.rate
+                            });
+                    }
+                }
+            }
+            
+
+            ViewBag.directorName = directorName;
+            ViewBag.cast = cast;
+            ViewBag.categories = categories;
+            ViewBag.rating_avg = rating_avg;
+            ViewBag.Ratings_Comments = Ratings_Comments;
+            return View(movie);
         }
 
         // GET: Movies/Create

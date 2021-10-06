@@ -6,7 +6,6 @@
 
 <h2>Index</h2>
 
-
 <div class="container">
     <form action="~/Movies/Search" method="get">
        <div class="form-group">
@@ -42,8 +41,7 @@
            </table>
        </div>
          
-    </form>
-        
+    </form>   
 </div>
 
 <div class="container" id="lettersContainer">
@@ -54,9 +52,7 @@
     }
 </div>
 
-
-
-<div class="container">
+<div class="container-fluid">
     @foreach (var item in Model)
     {
         @Html.Partial("_Movie", item);
