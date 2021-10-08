@@ -82,6 +82,7 @@
     <NavigationProperty Name="movies" Relationship="Self.customer_movie" FromRole="customer" ToRole="movie" />
     <NavigationProperty Name="technologies" Relationship="Self.customer_technology" FromRole="customer" ToRole="technology" />
     <NavigationProperty Name="hoppies" Relationship="Self.cutomer_hoppy" FromRole="customer" ToRole="hoppy" />
+    <Property Name="account_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="director">
     <Key>

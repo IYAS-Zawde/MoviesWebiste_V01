@@ -17,11 +17,11 @@
                    </td>
                    <td>
                        <label>Director Name</label>
-                       <input class="form-control" name="director_name" type="text" placeholder="Enter Director Name">
+                       <input class="form-control" id="directorNameInput" name="director_name" type="text" placeholder="Enter Director Name">
                    </td>
                    <td>
                        <label>Actor Name</label>
-                       <input class="form-control" name="actor_name" type="text" placeholder="Enter Actor Name">
+                       <input class="form-control" id="actorNameInput" name="actor_name" type="text" placeholder="Enter Actor Name">
                    </td>
                    <td>
                        <label>Movie Genre</label>
@@ -44,6 +44,8 @@
     </form>   
 </div>
 
+<div id="SearchResultDIV"></div>
+
 <div class="container" id="lettersContainer">
     @for (char i = 'A'; i <= 'Z'; i++)
     {
@@ -58,3 +60,19 @@
         @Html.Partial("_Movie", item);
     }
 </div>
+
+
+@section Scripts{
+    <script>
+        
+        $("#actorNameInput").keyup(function () {
+            var actorName = $("#actorNameInput").val();
+            $("#SearchResultDIV").load("/Movies/SearchActorsName", { q: actorName });
+        });
+
+        $("#directorNameInput").keyup(function () {
+            var directorName = $("#directorNameInput").val();
+            $("#SearchResultDIV").load("/Movies/SearchDirectorName", { q: directorName });
+        });
+    </script>
+}

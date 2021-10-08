@@ -151,8 +151,16 @@ namespace MoviesWebiste_V01.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Name, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+                customer temp = new customer();
+                temp.name = model.Name;
+                temp.age = model.Age;
+                temp.gender = model.Gender;
+                temp.email = temp.email;
+                temp.account_id = user.Id;
+
+                CustomClasses.CustomerManger.AddCustomerDetials(temp);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);

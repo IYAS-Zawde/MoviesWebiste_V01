@@ -36,6 +36,7 @@
     <EntitySetMapping Name="customers">
       <EntityTypeMapping TypeName="MoviesWebsiteDBModel.customer">
         <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="age" ColumnName="age" />

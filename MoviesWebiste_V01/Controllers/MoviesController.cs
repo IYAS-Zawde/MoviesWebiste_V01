@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using MoviesWebiste_V01.Models;
 namespace MoviesWebiste_V01.Controllers
 {
     public class MoviesController : Controller
@@ -98,6 +98,35 @@ namespace MoviesWebiste_V01.Controllers
             return View(movie);
         }
 
+        public ActionResult SearchActorsName(string q)
+        {
+
+            List<MoviesWebiste_V01.Models.SearchResult> actors = new List<MoviesWebiste_V01.Models.SearchResult>();
+            if (q == "")
+            {
+                return PartialView("_SearchResult", actors);
+            }
+            using (var dbContext = new MoviesWebsiteDBEntities())
+            {
+                actors = dbContext.actors.Where(x => x.name.Contains(q)).Select(z => new SearchResult { id = z.ID, value = z.name }).ToList();
+            }
+                return PartialView("_SearchResult", actors);
+        }
+
+        public ActionResult SearchDirectorName(string q)
+        {
+
+            List<MoviesWebiste_V01.Models.SearchResult> dirctors = new List<MoviesWebiste_V01.Models.SearchResult>();
+            if (q == "")
+            {
+                return PartialView("_SearchResult", dirctors);
+            }
+            using (var dbContext = new MoviesWebsiteDBEntities())
+            {
+                dirctors = dbContext.directors.Where(x => x.name.Contains(q)).Select(z => new SearchResult{ id = z.ID, value = z.name }).ToList();
+            }
+            return PartialView("_SearchResult", dirctors);
+        }
         // GET: Movies/Create
         public ActionResult Create()
         {

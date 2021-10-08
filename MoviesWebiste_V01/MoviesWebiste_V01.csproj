@@ -182,9 +182,11 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="creteria.cs">
       <DependentUpon>MoviesWebsiteDBEntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomClasses\CustomerManger.cs" />
     <Compile Include="customer.cs">
       <DependentUpon>MoviesWebsiteDBEntityModel.tt</DependentUpon>
     </Compile>
@@ -218,6 +220,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\SearchResult.cs" />
     <Compile Include="movie.cs">
       <DependentUpon>MoviesWebsiteDBEntityModel.tt</DependentUpon>
     </Compile>
@@ -334,9 +337,12 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Shared\_Movie.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Shared\_SearchResult.cshtml" />
+    <Content Include="Views\Customer\CompleteData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -51,6 +51,7 @@ namespace MoviesWebiste_V01
         public Nullable<int> tv_movie_frequent_id { get; set; }
         public Nullable<int> tv_signal_id { get; set; }
         public Nullable<int> format_id { get; set; }
+        public string account_id { get; set; }
     
         public virtual education_level education_level { get; set; }
         public virtual format format { get; set; }

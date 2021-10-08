@@ -4,35 +4,35 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="category">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="category" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="channel">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="creteria">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="criteria" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="customer">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="varchar" MaxLength="50" />
     <Property Name="age" Type="int" />
     <Property Name="email" Type="varchar(max)" />
@@ -55,6 +55,7 @@
     <Property Name="tv_movie_frequent_id" Type="int" />
     <Property Name="tv_signal_id" Type="int" />
     <Property Name="format_id" Type="int" />
+    <Property Name="account_id" Type="varchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'MoviesWebsiteDB.dbo.customer_actor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -130,63 +131,63 @@ warning 6002: The table/view 'MoviesWebsiteDB.dbo.cutomer_hoppy' does not have a
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="education_level">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="education_level" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="format">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="format" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="frequently">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="frequently" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="home_owner">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="home_owner_type" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="hoppy">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="hobby" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="internet_connection">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="internet_connection_type" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="marital_status">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="marital_status" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="movie">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="varchar" MaxLength="50" />
     <Property Name="director_id" Type="int" />
     <Property Name="overview" Type="text" />
@@ -225,7 +226,7 @@ warning 6002: The table/view 'MoviesWebsiteDB.dbo.movie_category' does not have 
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="customer_id" Type="int" />
     <Property Name="total" Type="float" />
     <Property Name="date" Type="date" />
@@ -244,7 +245,7 @@ warning 6002: The table/view 'MoviesWebsiteDB.dbo.order_movie' does not have a p
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="movie_id" Type="int" Nullable="false" />
     <Property Name="customer_id" Type="int" Nullable="false" />
     <Property Name="rate" Type="int" />
@@ -254,14 +255,14 @@ warning 6002: The table/view 'MoviesWebsiteDB.dbo.order_movie' does not have a p
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tv_signal">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="tv_signal" Type="varchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_customer_channel_channel">

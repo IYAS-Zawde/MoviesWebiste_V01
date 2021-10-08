@@ -1,0 +1,6 @@
+﻿@model IEnumerable<MoviesWebiste_V01.Models.SearchResult>
+
+@foreach (var item in Model)
+{
+    <button type="button" value="@item.id" class="btn btn-outline-secondary">@item.value</button>
+}

@@ -65,6 +65,19 @@ namespace MoviesWebiste_V01.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Name")]
+        public string Name { get; set; }
+
+        
+        [Required]
+        [Display(Name = "Age")]
+        public int Age { get; set; }
+
+        [Required]
+        [Display(Name = "Gender")]
+        public int Gender { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
